@@ -35,7 +35,7 @@ describe('TodosComponent', () => {
 
     it('should set the message property if server returns an error when adding a new todo', () => {
         let error = 'error from the server';
-        let spy = spyOn(service, 'add').and.returnValue(throwError(error));
+        spyOn(service, 'add').and.returnValue(throwError(error));
         component.add();
         expect(component.message).toBe(error);
     });
